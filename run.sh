@@ -4,7 +4,7 @@ rm -f P3_*
 echo "Loading modules..."
 module purge
 module load gcc-4.7.2
-module loda mvapich2-1.9/gcc-4.7.2
+module load mvapich2-1.9/gcc-4.7.2
 echo "Modules loaded! Now compiling..."
 set -x
 mpic++ -o run1 source1.cpp -std=c++11 -Ofast -march=native
