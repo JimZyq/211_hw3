@@ -27,9 +27,9 @@ do
         echo "#SBATCH --job-name=P"$i"N$n" >> $fn
         echo "#SBATCH --ouptut=result"$i"$n.txt" >> $fn
         echo "#SBATCH -N $n" >> $fn
-        echo "#SBATCH -t 00:20:00" >> $fn
+        echo "#SBATCH -t 00:10:00" >> $fn
         echo "" >> $fn
-        echo "mpirun ./run$i 10000000000" >> $fn
+	echo "mpirun -np $(($n*32))./run$i 10000000000 $n" >> $fn
         printf "."
     done
 done
